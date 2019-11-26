@@ -39,7 +39,7 @@ public class LoginPage extends BasePage {
 	 * Method to navigate to Registration page for new user
 	 * @return
 	 */
-	public AccountsPage navigateToRegister() {
+	public AccountsPage navigateToRegisterUserPage() {
 		waitForTextToAppear("Please enter your username and password.");
 		registerNow.click();
 		return this.switchToPage(AccountsPage.class);

@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.jpetstore.steps.PetStoreSteps;
+import com.jpetstore.utils.PetCategories;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -12,7 +13,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 
 @RunWith(SerenityRunner.class)
-public class Sample {
+public class SampleTest {
 
 	@Managed
 	WebDriver driver;
@@ -21,9 +22,12 @@ public class Sample {
 	PetStoreSteps store;
 	
 	@Test
-	@Title("Navigating to Sign In Page")
-	public void test001() {
+	@Title("testing of image navigation link")
+	public void test001() throws InterruptedException {
+		
 		store.navigateToSignInPage();
-		store.signInIntoJPetStore("j2ee", "j2ee");
+		store.selectProductsFromCenterImageLink(PetCategories.REPTILES);
+		store.selectPetByName(PetCategories.REPTILES, "Rattlesnake");
+		Thread.sleep(5000);
 	}
 }

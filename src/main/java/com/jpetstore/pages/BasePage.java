@@ -39,13 +39,13 @@ public class BasePage extends PageObject{
 		open();
 		waitForTextToAppear(WELCOME_MSG);
 		waitFor(enterStoreLink).click();
-		waitFor(signInLink).click();
+		//waitFor(signInLink).click();
 		return this.switchToPage(LoginPage.class);
 	}
 	
-	public SignInPage clickSignIn() {
-		
-		return this.switchToPage(SignInPage.class);
+	public LoginPage clickSignIn() {
+		waitFor(signInLink).click();
+		return this.switchToPage(LoginPage.class);
 	}
 	
 	public DashboardPage clickSignOut() {
@@ -53,8 +53,8 @@ public class BasePage extends PageObject{
 		return this.switchToPage(DashboardPage.class);
 	}
 	
+	
 	public ProductsPage navigateToProductsPage(PetCategories productCategory) {
-		
 		switch (productCategory) {
 		case FISH:
 			waitFor(fishLink).click();
