@@ -120,4 +120,9 @@ public class PetStoreSteps extends ScenarioSteps {
 	public ProductsPage selectPetByName(PetCategories petCategories, String petName) {
 		return productsPage.selectPetByName(petCategories, petName);
 	}
+	
+	@Step("Adding the product: {0} to the cart")
+	public ProductsPage addProductToCart(String productName) {
+		return productsPage.addProductToCart(productName);
+	}
 }

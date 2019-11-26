@@ -34,4 +34,23 @@ public class ProductsPage extends BasePage {
 		petDetails.get(0).findElement(By.tagName("a")).click();
 		return this;
 	}
+	
+	/**
+	 * 
+	 * Add a specific product to the cart
+	 * 
+	 * @param productName
+	 * @return
+	 */
+	public ProductsPage addProductToCart(String productName) {
+		
+		String cartXpathPart1 = "//div[@id='Catalog']//table//td[normalize-space() = '";
+		String cartXpathPart2 = "']//parent::tr//a[contains(text(), 'Add to Cart')]";
+		
+		String addToCart = cartXpathPart1 + productName + cartXpathPart2;
+		
+		waitFor(addToCart).$(addToCart).click();
+		
+		return this;
+	}
 }

@@ -28,6 +28,8 @@ public class SampleTest {
 		store.navigateToSignInPage();
 		store.selectProductsFromCenterImageLink(PetCategories.REPTILES);
 		store.selectPetByName(PetCategories.REPTILES, "Rattlesnake");
+		store.addProductToCart("Venomless Rattlesnake");
+		
 		Thread.sleep(5000);
 	}
 }
